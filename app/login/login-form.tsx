@@ -1,6 +1,7 @@
 "use client";
 
 import { useActionState, useState } from "react";
+import Link from "next/link";
 import { authenticate, type AuthFormState } from "../actions/auth";
 
 const initialState: AuthFormState = {};
@@ -19,12 +20,12 @@ export default function LoginForm({ configured }: { configured: boolean }) {
       />
       <div className="mx-auto grid min-h-screen max-w-6xl grid-cols-1 lg:grid-cols-[1.05fr_0.95fr]">
         <section className="flex flex-col justify-between px-6 pb-10 pt-8 sm:px-10 lg:px-14 lg:py-12">
-          <a className="flex w-fit items-center gap-3" href="/">
+          <Link className="flex w-fit items-center gap-3" href="/">
             <span className="grid size-10 place-items-center rounded-md bg-[#174f40] text-sm font-bold text-white">
               SN
             </span>
             <span className="text-sm font-semibold tracking-wide">Secure Notes</span>
-          </a>
+          </Link>
           <div className="max-w-lg py-12 lg:py-0">
             <p className="text-xs font-semibold uppercase text-[#63766b]">Tutor workspace</p>
             <h1 className="mt-4 text-4xl font-semibold leading-tight sm:text-5xl">
