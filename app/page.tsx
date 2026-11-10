@@ -81,7 +81,11 @@ async function AuthenticatedHome() {
                 <li className="py-5" key={note.id}>
                   <article>
                     <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-                      <h3 className="text-base font-semibold">{note.title}</h3>
+                      <h3 className="text-base font-semibold">
+                        <Link className="hover:underline" href={`/notes/${note.id}`}>
+                          {note.title}
+                        </Link>
+                      </h3>
                       <time className="text-xs text-[#718078]" dateTime={note.created_at}>
                         {new Intl.DateTimeFormat("en", { dateStyle: "medium" }).format(new Date(note.created_at))}
                       </time>
