@@ -5,6 +5,7 @@ import { Suspense } from "react";
 import { signOut } from "./actions/auth";
 import { createClient } from "../lib/supabase/server";
 import NewNoteForm from "./new-note-form";
+import NoteListActions from "./note-list-actions";
 
 export default function Home() {
   return (
@@ -91,6 +92,7 @@ async function AuthenticatedHome() {
                       </time>
                     </div>
                     {note.body && <p className="mt-2 whitespace-pre-wrap text-sm leading-6 text-[#52645b]">{note.body}</p>}
+                    <NoteListActions noteId={String(note.id)} />
                   </article>
                 </li>
               ))}
