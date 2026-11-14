@@ -1,5 +1,13 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Workspace features
+
+The private workspace includes projects, tasks with due dates, long-form documents, categorized notes, customizable tags, search, CSV/JSON export, and an in-app help panel. Records are scoped to the signed-in Supabase user with row-level security.
+
+### Supabase setup
+
+After configuring `.env.local` with the Supabase URL and publishable key, open the Supabase SQL Editor and run [`db/schema.sql`](./db/schema.sql). This creates the workspace tables and policies and safely adds category, project, and tags fields to an existing `notes` table. Re-run it after pulling schema changes so the Tasks, Documents, Projects, and custom-tag features can load and save data.
+
 ## Getting Started
 
 First, run the development server:
