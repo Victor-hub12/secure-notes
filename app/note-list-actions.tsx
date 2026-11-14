@@ -10,9 +10,9 @@ export default function NoteListActions({ noteId }: { noteId: string }) {
   const [state, deleteAction, deleting] = useActionState(deleteNote, initialState);
 
   return (
-    <div className="mt-3 flex flex-wrap items-center gap-3">
+    <div className="mt-4 flex flex-wrap items-center gap-2.5 border-t border-border pt-3">
       <Link
-        className="inline-flex min-h-10 items-center rounded-md bg-[#174f40] px-4 text-sm font-semibold text-white transition-colors hover:bg-[#103d31] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#174f40]"
+        className="inline-flex min-h-11 items-center justify-center rounded-xl bg-accent px-4 text-sm font-semibold text-white shadow-sm transition duration-150 hover:bg-accent-hover active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent dark:text-[#102019]"
         href={`/notes/${noteId}`}
       >
         Edit
@@ -27,7 +27,7 @@ export default function NoteListActions({ noteId }: { noteId: string }) {
       >
         <input name="id" type="hidden" value={noteId} />
         <button
-          className="inline-flex min-h-10 items-center rounded-md border border-[#b45a3c] px-4 text-sm font-medium text-[#8b3c2a] transition-colors hover:bg-[#fbf2ed] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#b45a3c] disabled:cursor-wait disabled:opacity-60"
+          className="inline-flex min-h-11 items-center justify-center rounded-xl border border-red-200 px-4 text-sm font-medium text-red-700 transition duration-150 hover:bg-red-50 active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600 disabled:cursor-wait disabled:opacity-60 dark:border-red-900 dark:text-red-300 dark:hover:bg-red-950/40"
           disabled={deleting}
           type="submit"
         >
@@ -35,7 +35,7 @@ export default function NoteListActions({ noteId }: { noteId: string }) {
         </button>
       </form>
       {state.error && (
-        <p className="w-full text-sm text-[#8b3c2a]" role="alert">
+        <p className="w-full rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800 dark:border-red-900 dark:bg-red-950/40 dark:text-red-200" role="alert">
           {state.error}
         </p>
       )}
